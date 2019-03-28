@@ -1,9 +1,4 @@
----
-title: "Importation dates Excel"
-author: "Eric M"
-date: "28 mars 2019"
-output: html_document
----
+# Test 
 In Excel, dates are displayed following the date format 01.01.2000 but it is only an interpretation of the encoded numerical value. Under the hood, Excel counts the number of days distant from a constant arbitrary date (impossible...) date : 00.01.1900. R uses the same principle and use the 01.01.1970 as reference. 
 When importing dates from Excel to R, there is a small work of transformation befor analyzing the data. Indeed, the column containing dates will not be recognized as a Date class. 
 To do so : 
