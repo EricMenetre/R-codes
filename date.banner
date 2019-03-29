@@ -1,4 +1,4 @@
-#To write efficient code, the following function returns an output like this one containing the date of the day  
+To write efficient code, the following function returns an output like this one containing the date of the day  
 
 ```{r}
 ##-----------------------
@@ -23,3 +23,4 @@ To call the function :
 
 ```{r}
 date.banner()
+```
