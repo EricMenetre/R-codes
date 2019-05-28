@@ -30,6 +30,7 @@ head(df.test.bon)
 clean.sd <- function(df.var.val, df.var.group, n.sd, data, fill) {
   
   plot.before.cleaning <<- qqnorm(df.var.val, main = "Distribution before cleaning") ; qqline(df.var.val)
+  hist.before.cleaning <<- hist(df.var.val, main = "Distribution of the RT before cleaning")
   
   # Création d'un data frame avec les limites inférieures et supérieures 
   moy.df.test <- data.frame(aggregate(df.var.val, list(df.var.group), mean, na.rm = TRUE))
@@ -60,8 +61,8 @@ clean.sd <- function(df.var.val, df.var.group, n.sd, data, fill) {
   clean.val <<- df.var.val
   
   # Vérification du succès de l'opération
-    # Définition du nombre de valeurs au dessus ou en dessous de la limite pour le premier sujet 
- 
+  # Définition du nombre de valeurs au dessus ou en dessous de la limite pour le premier sujet 
+  
   sum.lim.sup <<- sum(df.var.val[df.var.val == lim.df.test$Group.1[1]] >= lim.df.test$lim.sup[1], na.rm = TRUE) + sum(df.var.val[df.var.val == lim.df.test$Group.1[2]] >= lim.df.test$lim.sup[2], na.rm = TRUE)
   sum.lim.inf <<- sum(df.var.val[df.var.val == lim.df.test$Group.1[1]] <= lim.df.test$lim.inf[1], na.rm = TRUE) + sum(df.var.val[df.var.val == lim.df.test$Group.1[2]] <= lim.df.test$lim.inf[2], na.rm = TRUE)
   sum.lim.tot <<- sum(sum.lim.sup, sum.lim.inf)
@@ -73,8 +74,11 @@ clean.sd <- function(df.var.val, df.var.group, n.sd, data, fill) {
   }
   
   plot.after.cleaning <<- qqnorm(df.var.val, main = "Distribution after cleaning") ; qqline(df.var.val)
+  hist.after.cleaning <<- hist(clean.val, main = "Distribution of the RT after cleaning")
   plot.before.cleaning
+  hist.before.cleaning
   plot.after.cleaning
+  hist.after.cleaning
   
 }
 ```
