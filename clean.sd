@@ -88,7 +88,7 @@ clean.sd <- function(df.var.val, df.var.group, n.sd, data, fill) {
 - It creates a table containing the mean value, the SD and the inferior and superior limits according to a certain number of SD above the mean (the number of standard deviation above the mean is customizable)
 - It replaces the values either under the inferior limit or above the superior limit in a temporay vector that will be needed to be added to the original data frame. The replacement values can be defined in the function
 - It verifies for the first two groups that none of the extreme values are still present in the output vector
-- it creates two qqplots with the qqlines to display the values distribution before and after cleaning
+- it creates two qqplots with the qqlines and two histograms to display the distribution before and after cleaning
 
 ##The arguments of the functions are: 
 
