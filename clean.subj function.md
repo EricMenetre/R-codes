@@ -68,6 +68,8 @@ To use the function, here are the arguments:
 - N.sd: number of standard deviations above and under the mean, i.e. the criterion according to which you want to compare your subjects
 - data: name of the dataframe
 
+The function creates a table named "criterion" in your environment. In the last column of the table, you can see if subjects are either kept, or OUT. You might want to exclude subjects marked as OUT. 
+
 ## The second function: clean.subj.group
 
 Sometimes, especially in aging, developmental or lifespan studies, we need to perform exactly what does the previous function but for each age group separately for example (groups can be different from age, for example countries). This second function does exactly the same thing, except that the mean to which the subjects are compared is the mean of the sub-group and not the mean of the entire sample. The arguments of the function are identical except for one. First execute the following code if you want to use this function: 
@@ -128,6 +130,7 @@ Arguments for this function are:
 - *: the same as the clean.subj function
 - group.var: refers to the name of the groupping variable. Be careful, use the name without quoting it. Example: age and not "age"
 
+The function creates a table named "criterion" in your environment. In the last column of the table, you can see if subjects are either kept, or OUT. You might want to exclude subjects marked as OUT. 
 
 Have fun ;)
 
