@@ -14,15 +14,15 @@ cor_pearson <- function(x,y,data){
   sd.x <- sd(x, na.rm = T)
   sd.y <- sd(y, na.rm = T)
   
-  roh.x <- NA
-  roh.y <- NA
+  roh.x <<- NA
+  roh.y <<- NA
   
   for (i in 1:n){
     if(is.na(x[i]) | is.na(y[i])){
       next
     } else {
-    roh.x[i] <- x[i]-mean.x
-    roh.y[i] <- y[i]-mean.y
+    roh.x[i] <<- x[i]-mean.x
+    roh.y[i] <<- y[i]-mean.y
     }
   }
 
