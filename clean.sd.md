@@ -80,16 +80,14 @@ clean.sd <- function(df.var.val, df.var.group, n.sd, data, fill) {
   plot.after.cleaning
   hist.after.cleaning
   
-    # Normality tests of Kolmogorov-Smirnov anf Shapiro Wilks 
-  shap.before <- shapiro.test(df.var.val)
-  shap.after <- shapiro.test(clean.val)
+  # Normality tests of Kolmogorov-Smirnov anf Shapiro Wilks 
+
   ks.before <- ks.test(df.var.val, "pnorm", mean = mean(df.var.val, na.rm = T), sd = sd(df.var.val, na.rm = T))
   ks.after <- ks.test(clean.val, "pnorm", mean = mean(df.var.val, na.rm = T), sd = sd(df.var.val, na.rm = T))
   ks.after$statistic
   # results of the normality tests
   
-  print(paste("Two tests of normality have been performed: the Kolmogorov-Smirnov and Shapiro-Wilks. The W statistic associated to the Shapiro-wilks test before cleaning is", round(shap.before$statistic,2), "and the associate p-val is:", round(shap.before$p.value,2), ". After cleaning, the W equals", round(shap.after$statistic,2)," and the corresponding p-val equals", round(shap.after$p.value,2),"."))
-  print(paste("Regarding the Kolmogorov-Smirnov test, before cleaning, the D statistic is", round(ks.before$statistic,2), "while the corresponding p-val equals", round(ks.before$p.value,2),". After cleaning, the D statistic is", round(ks.after$statistic,2), "and the corresponding p-val equals", round(ks.after$p.value,2)))
+  print(paste("The Kolmogorov-Smirnov normality test D statistic before cleaning is", round(ks.before$statistic,2), "while the corresponding p-val equals", round(ks.before$p.value,2),". After cleaning, the D statistic is", round(ks.after$statistic,2), "and the corresponding p-val equals", round(ks.after$p.value,2)))
   
 }
 ```
